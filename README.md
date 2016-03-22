@@ -1,10 +1,12 @@
-# Check for low tides in your area.
+<h1>Check for low tides in your area.</h1>
 
-###Still first draft###
+<h3 style="box-sizing: border-box; margin-top: 1em; margin-bottom: 16px; line-height: 1.43; font-size: 1.5em; font-weight: bold; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"><a aria-hidden="true" class="anchor" href="https://github.com/jaredevans/check_lowtides/blob/master/README.md#still-first-draft" id="user-content-still-first-draft" style="box-sizing: border-box; color: rgb(64, 120, 192); text-decoration: none; display: inline-block; padding-right: 2px; margin-left: -18px; line-height: 1.2; background-color: transparent;"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a><strong>Still first draft</strong></h3>
 
-Check for local low tides within your day schedule
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; line-height: 25.6px;">Check for local low tides within your day schedule</p>
 
-1) Get your local tides data from NOAA
-2) Set your morning/evening hours schedule in tides.py
-3) Set the days deltas you are interested in. Today=0 , Tomorrow=1, etc
-4) Run the script!
+<ol>
+	<li style="box-sizing: border-box; margin-top: 0px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; line-height: 25.6px; margin-bottom: 0px !important;">Get your local tides data from NOAA</li>
+	<li style="box-sizing: border-box; margin-top: 0px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; line-height: 25.6px; margin-bottom: 0px !important;">Set your morning/evening hours schedule in tides.py</li>
+	<li style="box-sizing: border-box; margin-top: 0px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; line-height: 25.6px; margin-bottom: 0px !important;">Set the days deltas you are interested in. Today=0 , Tomorrow=1, etc</li>
+	<li style="box-sizing: border-box; margin-top: 0px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; line-height: 25.6px; margin-bottom: 0px !important;">Run the script!</li>
+</ol>
