@@ -3,6 +3,7 @@
 #Get your annual local tides in xml format:
 #http://tidesandcurrents.noaa.gov/tide_predictions.html
 
+import argparse
 from lxml import etree
 import pprint
 from datetime import datetime, time, date, timedelta
@@ -56,33 +57,44 @@ def get_tides(day_deltas):
 
   return lowtides
 
-#Set your available schedule using 24H format
-morning_start = time(7,0,0)
-morning_end = time(10,30,0)
-evening_start = time(16,0,0)
-evening_end = time(19,30,0)
+def print_tides(deltas):
+  """Output sorted list of low tides"""
+  #Filter out low tides for today=0, tomorrow=1, and future=2,10
+  day_deltas=[0,1,2,3]
+  day_deltas=list(deltas)
+  tides = {}
+  tides = get_tides(day_deltas)
 
-#Read in the tides data
-tree = etree.parse('tides.xml')
-
-#Process the tides
-root = tree.getroot()
-
-#Filter out low tides for today=0, tomorrow=1, and future=2,10
-day_deltas=[0,1,2,3]
-tides = {}
-tides = get_tides(day_deltas)
-
-if len(tides) > 0 :
-  print("Upcoming low tides within your available schedule:")
-  print (" ")
-  # A dictionary doesn't guarantee a sorted order, so need to do this first
-  tides_sorted = iter(sorted(tides.items()))
-  for k, v in tides_sorted:
-    #Prettify the output in aligned columns of text
-    print("{: >8} {: >11} {: >9} {: >5}".format(v['day'], v['date'], v['time'], v['prediction']))
-else:
-  print("No upcoming low tides within your available schedule.")
+  if len(tides) > 0 :
+    print("Upcoming low tides within your available schedule:")
+    print (" ")
+    # A dictionary doesn't guarantee a sorted order, so need to do this first
+    tides_sorted = iter(sorted(tides.items()))
+    for k, v in tides_sorted:
+      #Prettify the output in aligned columns of text
+      print("{: >8} {: >11} {: >9} {: >5}".format(v['day'], v['date'], v['time'], v['prediction']))
+  else:
+    print("No upcoming low tides within your available schedule.")
+    print (" ")
+  
   print (" ")
 
-print (" ")
+if __name__ == "__main__":
+  parser = argparse.ArgumentParser(description="Get low tides for your available schedule")
+  parser.add_argument("-d" , "--daydeltas", default=["replace this with your default values, 0 1 2 3 4"], metavar='N', type=int, nargs='+', help="Day deltas to process, i.e. 0 1 2 3 4")
+  args = parser.parse_args()
+
+  #Set your available schedule using 24H format
+  morning_start = time(7,0,0)
+  morning_end = time(10,30,0)
+  evening_start = time(16,0,0)
+  evening_end = time(19,30,0)
+
+  #Read in the tides data
+  tree = etree.parse('tides.xml')
+
+  #Process the tides data
+  root = tree.getroot()
+
+  # Display the low tides within your schedule
+  print_tides(args.daydeltas)
