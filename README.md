@@ -28,7 +28,7 @@
 	</tbody>
 </table>
 
-<p>The script accepts an&nbsp;argument <span style="line-height: 20.8px;">&quot;days delta&quot;&nbsp;</span>so you can ask for &#39;x&#39; number of days of tide predictions in advance that works within your open schedule.</p>
+<p>The script accepts an&nbsp;argument <span style="line-height: 20.8px;">&quot;days deltas&quot;&nbsp;</span>so you can ask for &#39;x&#39; number of days of tide predictions in advance that works within your open schedule.</p>
 
 <div style="background:#eee;border:1px solid #ccc;padding:5px 10px;">&gt; python3 tides.py -d 0 1 2 3 4 5 6 7<br />
 Upcoming low tides within your available schedule:</div>
