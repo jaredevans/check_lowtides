@@ -28,6 +28,7 @@
 
 <p>The script accepts an&nbsp;argument <span style="line-height: 20.8px;">&quot;days delta&quot;&nbsp;</span>so you can ask for &#39;x&#39; number of days of tide predictions in advance that works within your open schedule.</p>
 
+<blockquote>
 <p><tt><code>&gt; python3 tides.py -d 0 1 2 3 4 5 6 7<br />
 Upcoming low tides within your available schedule:</code></tt></p>
 
@@ -38,3 +39,4 @@ Tomorrow &nbsp;2016/03/23 &nbsp;08:25 AM &nbsp; 0.2<br />
 &nbsp; Future &nbsp;2016/03/26 &nbsp;09:29 AM &nbsp; 0.5<br />
 &nbsp; Future &nbsp;2016/03/27 &nbsp;09:52 AM &nbsp; 0.6<br />
 &nbsp; Future &nbsp;2016/03/28 &nbsp;10:17 AM &nbsp; 0.7</code></tt></p>
+</blockquote>
