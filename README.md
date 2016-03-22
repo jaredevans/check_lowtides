@@ -5,6 +5,8 @@
 
 <p>Thanks to taxpayers&#39; money, NOAA provides annual daily&nbsp;predictions of tides at different spots&nbsp;across the country. &nbsp;You can download your local tides data in XML format at:&nbsp;<a href="http://tidesandcurrents.noaa.gov/tide_predictions.html" target="_blank"><span style="color: rgb(150, 152, 150); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">http://tidesandcurrents.noaa.gov/tide_predictions.html</span></a></p>
 
+<p>Note: uses lxml and xpath for fast and simple XML processing / filtering</p>
+
 <p>Set your available schedule in the script using 24H format.</p>
 
 <p>My available schedule is 7am - 10:30am and 4:00pm - 7:30pm</p>
