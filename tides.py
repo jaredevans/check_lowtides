@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+
+#Get your annual local tides in xml format:
+#http://tidesandcurrents.noaa.gov/tide_predictions.html
+
 from lxml import etree
 import pprint
 from datetime import datetime, time, date, timedelta
