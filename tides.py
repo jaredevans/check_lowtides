@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/bin/python3
 
 #Get your annual local tides in xml format:
 #http://tidesandcurrents.noaa.gov/tide_predictions.html
@@ -15,12 +15,13 @@ def time_in_range(start, end, x):
         return start <= x or x <= end
 
 def get_tides(day_deltas):
+  """Return low tides within morning/evening schedule"""
   lowtides = {}
   for day_delta in day_deltas:
     udate = datetime.now() + timedelta(days=day_delta)
     pdate = udate.strftime("%Y/%m/%d")
 
-##### Code for troubleshooting dates
+##### Custom select dates for troubleshooting, if necessary
 #    if day_delta == 0 :
 #      pdate="2016/01/22"
 #    elif day_delta == 1 :
@@ -31,29 +32,29 @@ def get_tides(day_deltas):
 #      pdate="2016/02/03"
 #    print(pdate)
 
+    #The xpath to filter xml for a specific date having low tide
     xpathstr=".//data/item[date='" + pdate + "'][highlow='L']"
 
-    for i in root.findall(xpathstr):
-      itime = i.find('time').text
-      t = datetime.strptime(itime, '%I:%M %p')
-      ptime = time(t.hour,t.minute,0)
+    for item in root.findall(xpathstr):
+      strtime = item.find('time').text
+      vtime = datetime.strptime(strtime, '%I:%M %p')
+      ptime = time(vtime.hour,vtime.minute,0)
 
       if time_in_range(morning_start, morning_end, ptime) or time_in_range(evening_start, evening_end, ptime) :
-        dt = i.find('date').text + " " + i.find('time').text
-        timestamp = datetime.strptime(dt , '%Y/%m/%d %I:%M %p')
-        lowtides[timestamp] = {}
+        strdate = item.find('date').text + " " + item.find('time').text
+        vtimestamp = datetime.strptime(strdate , '%Y/%m/%d %I:%M %p')
+        lowtides[vtimestamp] = {}
         if day_delta == 0:
-          lowtides[timestamp]['tt'] = "Today"
+          lowtides[vtimestamp]['day'] = "Today"
         elif day_delta == 1:
-          lowtides[timestamp]['tt'] = "Tomorrow"
+          lowtides[vtimestamp]['day'] = "Tomorrow"
         else:
-          lowtides[timestamp]['tt'] = "Future"
-        lowtides[timestamp]['date'] = i.find('date').text
-        lowtides[timestamp]['time'] = i.find('time').text
-        lowtides[timestamp]['pred'] = i.find('predictions_in_ft').text
+          lowtides[vtimestamp]['day'] = "Future"
+        lowtides[vtimestamp]['date'] = item.find('date').text
+        lowtides[vtimestamp]['time'] = item.find('time').text
+        lowtides[vtimestamp]['prediction'] = item.find('predictions_in_ft').text
 
   return lowtides
-
 
 #Set your available schedule using 24H format
 morning_start = time(7,0,0)
@@ -68,7 +69,7 @@ tree = etree.parse('tides.xml')
 root = tree.getroot()
 
 #Filter out low tides for today=0, tomorrow=1, and future=2,10
-day_deltas=[0,1,2,5]
+day_deltas=[0,1,2,3]
 tides = {}
 tides = get_tides(day_deltas)
 
@@ -79,7 +80,7 @@ if len(tides) > 0 :
   tides_sorted = iter(sorted(tides.items()))
   for k, v in tides_sorted:
     #Prettify the output in aligned columns of text
-    print("{: >8} {: >11} {: >9} {: >5}".format(v['tt'], v['date'], v['time'], v['pred']))
+    print("{: >8} {: >11} {: >9} {: >5}".format(v['day'], v['date'], v['time'], v['prediction']))
 else:
   print("No upcoming low tides within your available schedule.")
   print (" ")
