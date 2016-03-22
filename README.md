@@ -1,12 +1,40 @@
-<h1>Check for low tides in your area.</h1>
+<h2>Display the times of low tide in your area, and only within your open schedule.</h2>
 
-<h3 style="box-sizing: border-box; margin-top: 1em; margin-bottom: 16px; line-height: 1.43; font-size: 1.5em; font-weight: bold; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"><a aria-hidden="true" class="anchor" href="https://github.com/jaredevans/check_lowtides/blob/master/README.md#still-first-draft" id="user-content-still-first-draft" style="box-sizing: border-box; color: rgb(64, 120, 192); text-decoration: none; display: inline-block; padding-right: 2px; margin-left: -18px; line-height: 1.2; background-color: transparent;"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a><strong>Still first draft</strong></h3>
+<hr />
+<p>The script tides.py was my quick solution to display the times of&nbsp;low tide so I know when I could bring my dog out for a walk on the beach. &nbsp;Yes, I know I&#39;m a major geek in that way. &nbsp;Since I can go only&nbsp;in the morning or early evening,&nbsp;this script shows low tides&nbsp;only during these two windows&nbsp;of time.</p>
 
-<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; line-height: 25.6px;">Check for local low tides within your day schedule</p>
+<p>Thanks to taxpayers&#39; money, NOAA provides annual daily&nbsp;predictions of tides at different spots&nbsp;across the country. &nbsp;You can download your local tides data in XML format at:&nbsp;<a href="http://tidesandcurrents.noaa.gov/tide_predictions.html" target="_blank"><span style="color: rgb(150, 152, 150); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">http://tidesandcurrents.noaa.gov/tide_predictions.html</span></a></p>
 
-<ol>
-	<li style="box-sizing: border-box; margin-top: 0px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; line-height: 25.6px; margin-bottom: 0px !important;">Get your local tides data from NOAA</li>
-	<li style="box-sizing: border-box; margin-top: 0px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; line-height: 25.6px; margin-bottom: 0px !important;">Set your morning/evening hours schedule in tides.py</li>
-	<li style="box-sizing: border-box; margin-top: 0px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; line-height: 25.6px; margin-bottom: 0px !important;">Set the days deltas you are interested in. Today=0 , Tomorrow=1, etc</li>
-	<li style="box-sizing: border-box; margin-top: 0px; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; line-height: 25.6px; margin-bottom: 0px !important;">Run the script!</li>
-</ol>
+<p>Set your available schedule in the script using 24H format.</p>
+
+<p>My available schedule is 7am - 10:30am and 4:00pm - 7:30pm</p>
+
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; tab-size: 8; font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 18.2px;">
+	<tbody style="box-sizing: border-box;">
+		<tr style="box-sizing: border-box;">
+			<td class="blob-code blob-code-inner js-file-line" id="LC87" style="box-sizing: border-box; padding: 0px 10px; position: relative; vertical-align: top; overflow: visible; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 12px; word-wrap: normal; white-space: pre;">morning_start <span class="pl-k" style="box-sizing: border-box; color: rgb(167, 29, 93);">=</span> time(<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">7</span>,<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">0</span>,<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">0</span>)</td>
+		</tr>
+		<tr style="box-sizing: border-box;">
+			<td class="blob-code blob-code-inner js-file-line" id="LC88" style="box-sizing: border-box; padding: 0px 10px; position: relative; vertical-align: top; overflow: visible; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 12px; word-wrap: normal; white-space: pre;">morning_end <span class="pl-k" style="box-sizing: border-box; color: rgb(167, 29, 93);">=</span> time(<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">10</span>,<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">30</span>,<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">0</span>)</td>
+		</tr>
+		<tr style="box-sizing: border-box;">
+			<td class="blob-code blob-code-inner js-file-line" id="LC89" style="box-sizing: border-box; padding: 0px 10px; position: relative; vertical-align: top; overflow: visible; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 12px; word-wrap: normal; white-space: pre;">evening_start <span class="pl-k" style="box-sizing: border-box; color: rgb(167, 29, 93);">=</span> time(<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">16</span>,<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">0</span>,<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">0</span>)</td>
+		</tr>
+		<tr style="box-sizing: border-box;">
+			<td class="blob-code blob-code-inner js-file-line" id="LC90" style="box-sizing: border-box; padding: 0px 10px; position: relative; vertical-align: top; overflow: visible; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 12px; word-wrap: normal; white-space: pre;">evening_end <span class="pl-k" style="box-sizing: border-box; color: rgb(167, 29, 93);">=</span> time(<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">19</span>,<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">30</span>,<span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">0</span>)</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>The script accepts an&nbsp;argument <span style="line-height: 20.8px;">&quot;days delta&quot;&nbsp;</span>so you can ask for &#39;x&#39; number of days of tide predictions in advance that works within your open schedule.</p>
+
+<p><code>&gt; python3 tides.py -d 0 1 2 3 4 5 6 7<br />
+Upcoming low tides within your available schedule:</code></p>
+
+<p><code>&nbsp; &nbsp;Today &nbsp;2016/03/22 &nbsp;08:03 AM &nbsp; 0.1<br />
+Tomorrow &nbsp;2016/03/23 &nbsp;08:25 AM &nbsp; 0.2<br />
+&nbsp; Future &nbsp;2016/03/24 &nbsp;08:46 AM &nbsp; 0.3<br />
+&nbsp; Future &nbsp;2016/03/25 &nbsp;09:07 AM &nbsp; 0.4<br />
+&nbsp; Future &nbsp;2016/03/26 &nbsp;09:29 AM &nbsp; 0.5<br />
+&nbsp; Future &nbsp;2016/03/27 &nbsp;09:52 AM &nbsp; 0.6<br />
+&nbsp; Future &nbsp;2016/03/28 &nbsp;10:17 AM &nbsp; 0.7</code></p>
