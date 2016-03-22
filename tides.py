@@ -57,11 +57,9 @@ def get_tides(day_deltas):
 
   return lowtides
 
-def print_tides(deltas):
+def print_tides(day_deltas):
   """Output sorted list of low tides"""
   #Filter out low tides for today=0, tomorrow=1, and future=2,10
-  day_deltas=[0,1,2,3]
-  day_deltas=list(deltas)
   tides = {}
   tides = get_tides(day_deltas)
 
@@ -80,6 +78,7 @@ def print_tides(deltas):
   print (" ")
 
 if __name__ == "__main__":
+  """Run the script: ./tides.py -d 0 1 2 3"""
   parser = argparse.ArgumentParser(description="Get low tides for your available schedule")
   parser.add_argument("-d" , "--daydeltas", default=["replace this with your default values, 0 1 2 3 4"], metavar='N', type=int, nargs='+', help="Day deltas to process, i.e. 0 1 2 3 4")
   args = parser.parse_args()
