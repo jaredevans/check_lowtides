@@ -1,4 +1,4 @@
-# check_lowtides
+# Check for low tides in your area.
 Check for local low tides within your day schedule
 
 1) Get your local tides data from NOAA
