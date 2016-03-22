@@ -86,8 +86,8 @@ if __name__ == "__main__":
   #Set your available schedule using 24H format
   morning_start = time(7,0,0)
   morning_end = time(10,30,0)
-  evening_start = time(16,0,0)
-  evening_end = time(19,30,0)
+  evening_start = time(16,30,0)
+  evening_end = time(20,30,0)
 
   #Read in the tides data
   tree = etree.parse('tides.xml')
