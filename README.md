@@ -1,7 +1,7 @@
 <h2>Display the times of low tide in your area, and only within your open schedule.</h2>
 
 <hr />
-<p>The script tides.py was my quick solution to display the times of&nbsp;low tide so I know when I could bring my dog out for a walk on the beach. &nbsp;Yes, I know you have to be a geek to do something like this! &nbsp;Since I can go only&nbsp;in the morning or early evening,&nbsp;this script shows low tides&nbsp;only during these two windows&nbsp;of time.</p>
+<p>This is my quick solution to display the times of&nbsp;low tide so I know when I could bring my dog out for a walk on the beach. &nbsp;Yes, I know you have to be a geek to do something like this! &nbsp;Since I can go only&nbsp;in the morning or early evening,&nbsp;this script shows low tides&nbsp;only during these two windows&nbsp;of time.</p>
 
 <p>Thanks to taxpayers&#39; money, NOAA provides annual daily&nbsp;predictions of tides at different spots&nbsp;across the country. &nbsp;You can download your local tides data in XML format at:&nbsp;<a href="http://tidesandcurrents.noaa.gov/tide_predictions.html" target="_blank"><span style="color: rgb(150, 152, 150); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">http://tidesandcurrents.noaa.gov/tide_predictions.html</span></a></p>
 
