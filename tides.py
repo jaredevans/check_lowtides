@@ -81,13 +81,24 @@ if __name__ == "__main__":
   """Run the script: ./tides.py -d 0 1 2 3"""
   parser = argparse.ArgumentParser(description="Get low tides for your available schedule")
   parser.add_argument("-d" , "--daydeltas", default=["replace this with your default values, 0 1 2 3 4"], metavar='N', type=int, nargs='+', help="Day deltas to process, i.e. 0 1 2 3 4")
+  parser.add_argument("-ms" , "--morning_start", default=["7:00am"], nargs=1, help="Your morning start time.")
+  parser.add_argument("-me" , "--morning_end", default=["10:30am"], nargs=1, help="Your morning end time.")
+  parser.add_argument("-es" , "--evening_start", default=["4:00pm"], nargs=1, help="Your evening start time.")
+  parser.add_argument("-ee" , "--evening_end", default=["8:30pm"], nargs=1, help="Your evening end time.")
   args = parser.parse_args()
 
   #Set your available schedule using 24H format
-  morning_start = time(7,0,0)
-  morning_end = time(10,30,0)
-  evening_start = time(16,30,0)
-  evening_end = time(20,30,0)
+  vMorningStart = datetime.strptime(args.morning_start[0], '%I:%M%p')
+  morning_start = time(vMorningStart.hour,vMorningStart.minute,0)
+
+  vMorningEnd= datetime.strptime(args.morning_end[0], '%I:%M%p')
+  morning_end = time(vMorningEnd.hour,vMorningEnd.minute,0)
+
+  vEveningStart = datetime.strptime(args.evening_start[0], '%I:%M%p')
+  evening_start = time(vEveningStart.hour,vEveningStart.minute,0)
+
+  vEveningEnd= datetime.strptime(args.evening_end[0], '%I:%M%p')
+  evening_end = time(vEveningEnd.hour,vEveningEnd.minute,0)
 
   #Read in the tides data
   tree = etree.parse('tides.xml')
@@ -96,4 +107,5 @@ if __name__ == "__main__":
   root = tree.getroot()
 
   # Display the low tides within your schedule
+  print("Subject: Low Tides")
   print_tides(args.daydeltas)
