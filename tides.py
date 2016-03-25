@@ -64,13 +64,19 @@ def print_tides(day_deltas):
   tides = get_tides(day_deltas)
 
   if len(tides) > 0 :
+    prev_day = ""
+    curr_day = ""
     print("Upcoming low tides within your available schedule:")
     print (" ")
     # A dictionary doesn't guarantee a sorted order, so need to do this first
     tides_sorted = iter(sorted(tides.items()))
     for k, v in tides_sorted:
       #Prettify the output in aligned columns of text
+      curr_day = v['day']
+      if (prev_day == 'Today') and (curr_day == 'Tomorrow') :
+        print(" ")
       print("{: >8} {: >11} {: >9} {: >5}".format(v['day'], v['date'], v['time'], v['prediction']))
+      prev_day = v['day']
   else:
     print("No upcoming low tides within your available schedule.")
     print (" ")
