@@ -5,7 +5,7 @@
 
 <p>Thanks to taxpayers&#39; money, NOAA provides annual daily&nbsp;predictions of tides at different spots&nbsp;across the country. &nbsp;You can download your local tides data in XML format at:&nbsp;<a href="http://tidesandcurrents.noaa.gov/tide_predictions.html" target="_blank"><span style="color: rgb(150, 152, 150); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 12px; line-height: 16.8px; white-space: pre;">http://tidesandcurrents.noaa.gov/tide_predictions.html</span></a></p>
 
-<p>Note: lxml and xpath are used&nbsp;for fast and simple XML processing / filtering</p>
+<p>Note: lxml and xpath is used&nbsp;for fast and simple XML processing / filtering</p>
 
 <p>Set your available schedule using the morning/evenings start/end arguments.</p>
 
@@ -21,3 +21,27 @@ Upcoming low tides within your available schedule:</pre>
 
 <p>Tomorrow &nbsp;2016/03/27 &nbsp;09:52 AM &nbsp; 0.6<br />
 &nbsp; Future &nbsp; &nbsp; 2016/03/28 &nbsp;10:17 AM &nbsp; 0.7</p>
+
+<hr/>
+<pre>
+python3 tides.py -h
+usage: tides.py [-h] [-d N [N ...]] [-xf XMLFILE] [-ms MORNING_START]
+                [-me MORNING_END] [-es EVENING_START] [-ee EVENING_END]
+
+Get low tides for your available schedule
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d N [N ...], --daydeltas N [N ...]
+                        Day deltas to process, i.e. 0 1 2 3 4
+  -xf XMLFILE, --xmlfile XMLFILE
+                        Your local tides XML file
+  -ms MORNING_START, --morning_start MORNING_START
+                        Your morning start time.
+  -me MORNING_END, --morning_end MORNING_END
+                        Your morning end time.
+  -es EVENING_START, --evening_start EVENING_START
+                        Your evening start time.
+  -ee EVENING_END, --evening_end EVENING_END
+                        Your evening end time.
+</pre>
