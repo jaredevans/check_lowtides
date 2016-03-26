@@ -87,6 +87,7 @@ if __name__ == "__main__":
   """Run the script: ./tides.py -d 0 1 2 3"""
   parser = argparse.ArgumentParser(description="Get low tides for your available schedule")
   parser.add_argument("-d" , "--daydeltas", default=["replace this with your default values, 0 1 2 3 4"], metavar='N', type=int, nargs='+', help="Day deltas to process, i.e. 0 1 2 3 4")
+  parser.add_argument("-xf" , "--xmlfile", default=["tides.xml"], nargs=1, help="Your local tides XML file")
   parser.add_argument("-ms" , "--morning_start", default=["7:00am"], nargs=1, help="Your morning start time.")
   parser.add_argument("-me" , "--morning_end", default=["10:30am"], nargs=1, help="Your morning end time.")
   parser.add_argument("-es" , "--evening_start", default=["4:00pm"], nargs=1, help="Your evening start time.")
@@ -106,8 +107,10 @@ if __name__ == "__main__":
   vEveningEnd= datetime.strptime(args.evening_end[0], '%I:%M%p')
   evening_end = time(vEveningEnd.hour,vEveningEnd.minute,0)
 
+  xmlFile = args.xmlfile[0] 
+
   #Read in the tides data
-  tree = etree.parse('tides.xml')
+  tree = etree.parse(xmlFile)
 
   #Process the tides data
   root = tree.getroot()
