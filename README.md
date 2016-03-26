@@ -12,7 +12,7 @@
 <p><span style="line-height: 1.6;">The script accepts an&nbsp;argument </span><span style="line-height: 20.8px;">--days deltas&quot;&nbsp;</span><span style="line-height: 1.6;">so you can receive &#39;x&#39; number of days worth of tide predictions that are within your open schedule.</span></p>
 
 <pre>
-tides.py -xf /home/jared/check_lowtides/tides.xml -d 0 1 2 -ms 7:00am -me 10:30am -es 4:00pm -ee 8:30pm
+tides.py -xf tides.xml -d 0 1 2 -ms 7:00am -me 10:30am -es 4:00pm -ee 8:30pm
 
 Subject: Low Tides
 Upcoming low tides within your available schedule:</pre>
