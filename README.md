@@ -19,10 +19,8 @@ Subject: Low Tides
 Upcoming low tides within your available schedule:
 
 <p>&nbsp; &nbsp; &nbsp; Today &nbsp;&nbsp;2016/03/26 &nbsp;09:29 AM &nbsp; 0.5</p>
-<p>
 Tomorrow &nbsp;2016/03/27 &nbsp;09:52 AM &nbsp; 0.6
 Future &nbsp; &nbsp; 2016/03/28 &nbsp;10:17 AM &nbsp; 0.7
-</p>
 </pre>
 
 <hr/>
