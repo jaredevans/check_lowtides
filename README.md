@@ -16,12 +16,13 @@
 tides.py -xf tides.xml -d 0 1 2 -ms 7:00am -me 10:30am -es 4:00pm -ee 8:30pm
 
 Subject: Low Tides
-Upcoming low tides within your available schedule:</pre>
+Upcoming low tides within your available schedule:
 
 <p>&nbsp; &nbsp; &nbsp; Today &nbsp;&nbsp;2016/03/26 &nbsp;09:29 AM &nbsp; 0.5</p>
 
 <p>Tomorrow &nbsp;2016/03/27 &nbsp;09:52 AM &nbsp; 0.6<br />
 &nbsp; Future &nbsp; &nbsp; 2016/03/28 &nbsp;10:17 AM &nbsp; 0.7</p>
+</pre>
 
 <hr/>
 <pre>
