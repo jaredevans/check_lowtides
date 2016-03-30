@@ -46,7 +46,6 @@ def get_tides(day_deltas, root, ms, me, es, ee):
 
 def print_tides(day_deltas, root, ms, me, es, ee):
   """Output sorted list of low tides"""
-  #Filter out low tides for today=0, tomorrow=1, and future=2,10
   data = ""
   tides = {}
   tides = get_tides(day_deltas, root, ms, me, es, ee)
