@@ -94,7 +94,7 @@ def index():
   root = tree.getroot()
 
   # Display the low tides within your schedule
-  daydeltas = (0, 1, 2, 4)
+  daydeltas = (0, 1, 2, 3)
   numdays = len (daydeltas)
   data = "Seeking low tides for the next " + str(numdays) + " days between <p> </p> morning times: " + ms + "-" + me + " <br> evening times: " + es + "-" + ee + "<p> </p>"
   data = data + print_tides(daydeltas, root, morning_start, morning_end, evening_start, evening_end)
