@@ -50,7 +50,7 @@ def get_tides(day_deltas):
         elif day_delta == 1:
           lowtides[vtimestamp]['day'] = "Tomorrow"
         else:
-          lowtides[vtimestamp]['day'] = "Future"
+          lowtides[vtimestamp]['day'] = "In " + str(day_delta) + " days"
         lowtides[vtimestamp]['date'] = item.find('date').text
         lowtides[vtimestamp]['time'] = item.find('time').text
         lowtides[vtimestamp]['prediction'] = item.find('predictions_in_ft').text
